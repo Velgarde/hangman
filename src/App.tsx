@@ -33,10 +33,10 @@ function App() {
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       const key = e.key
-      if (!key.match(/^[a-z]$/)) return
+      if (!key.match(/^[a-zA-Z]$/)) return
 
       e.preventDefault()
-      addGuessedLetter(key)
+      addGuessedLetter(key.toLowerCase())
     }
 
     document.addEventListener("keypress", handler)
